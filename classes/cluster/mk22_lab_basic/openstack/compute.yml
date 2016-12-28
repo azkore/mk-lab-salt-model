@@ -11,16 +11,17 @@ parameters:
   _param:
     opencontrail_compute_gateway: 172.16.10.1
     opencontrail_compute_address: ${_param:single_address}
-    opencontrail_compute_iface: eth1
+    opencontrail_compute_iface: ens4
   linux:
     network:
       interface:
-        eth1:
+        ens4:
           enabled: true
           type: eth
           proto: manual
         vhost0:
           enabled: true
+          proto: manual
           type: eth
           mtu: 1500
           address: ${_param:single_address}
@@ -28,7 +29,7 @@ parameters:
           pre_up_cmds:
           - /usr/lib/contrail/if-vhost0
           use_interfaces:
-          - eth1
+          - ens4
   nova:
     compute:
       vncproxy_url: http://${_param:cluster_vip_address}:6080

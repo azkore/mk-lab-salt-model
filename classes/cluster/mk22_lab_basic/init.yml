@@ -7,11 +7,11 @@ classes:
 - cluster.mk22_lab_basic.stacklight.client
 parameters:
   _param:
-    cluster_domain: mk22-lab-basic.local
+    cluster_domain: mk.slab.local
     cluster_name: mk22_lab_basic
-    cluster_public_host: _
+    cluster_public_host: mk22
     # fuel service addresses
-    fuel_config_address: 172.16.10.100
+    fuel_config_address: 172.31.35.12
     # openstack service addresses
     openstack_proxy_address: 172.16.10.121
     openstack_proxy_node01_address: 172.16.10.121

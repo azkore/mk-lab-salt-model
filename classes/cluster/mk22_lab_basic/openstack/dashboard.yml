@@ -11,7 +11,11 @@ parameters:
           source: deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ trusty liberty
     network:
       interface:
-        eth1:
+        ens4:
           enabled: true
           type: eth
-          proto: dhcp
+          proto: static
+          mtu: 1500
+          address: ${_param:single_address}
+          netmask: '255.255.255.0'
+
